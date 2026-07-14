@@ -1,0 +1,687 @@
+/* ==========================================
+            RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins', sans-serif;
+
+    background-image:url("assets/imagens/fundo.jpeg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    background-attachment:fixed;
+
+    color:white;
+
+    overflow-x:hidden;
+
+}
+
+/* ==========================================
+            OVERLAY
+========================================== */
+
+.overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.70);
+
+    z-index:-1;
+
+}
+
+/* ==========================================
+            HEADER
+========================================== */
+
+header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    backdrop-filter:blur(14px);
+
+    background:rgba(255,255,255,.06);
+
+    border-bottom:1px solid rgba(255,255,255,.12);
+
+    z-index:999;
+
+}
+
+nav{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 30px;
+
+}
+
+nav h2{
+
+    font-family:'Great Vibes', cursive;
+
+    font-size:40px;
+
+    color:#ffb6d2;
+
+}
+
+nav ul{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:30px;
+
+}
+
+nav ul li{
+
+    list-style:none;
+
+}
+
+nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:500;
+
+    transition:.35s;
+
+}
+
+nav a:hover{
+
+    color:#ff9fc7;
+
+}
+
+nav a.ativo{
+
+    color:#ff9fc7;
+
+}
+
+/* ==========================================
+            HERO
+========================================== */
+
+.hero{
+
+    width:100%;
+
+    padding-top:150px;
+
+    padding-bottom:70px;
+
+    text-align:center;
+
+}
+
+.hero h1{
+
+    font-family:'Great Vibes', cursive;
+
+    font-size:5rem;
+
+    color:#ffd9e8;
+
+    margin-bottom:20px;
+
+}
+
+.hero p{
+
+    width:min(700px,90%);
+
+    margin:auto;
+
+    line-height:2;
+
+    font-size:1.1rem;
+
+    color:#f5f5f5;
+
+}
+
+/* ==========================================
+        GALERIA
+========================================== */
+
+.galeria{
+
+    max-width:1250px;
+
+    margin:70px auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:45px;
+
+    padding:20px;
+
+}
+
+/* ==========================================
+            POLAROID
+========================================== */
+
+.polaroid{
+
+    perspective:1200px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.card{
+
+    width:300px;
+
+    height:420px;
+
+    position:relative;
+
+    transform-style:preserve-3d;
+
+    transition:.8s;
+
+    cursor:pointer;
+
+}
+
+.polaroid:hover .card{
+
+    transform:translateY(-12px) scale(1.05);
+
+}
+
+.frente,
+.verso{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    backface-visibility:hidden;
+
+    border-radius:8px;
+
+    overflow:hidden;
+
+}
+
+/* ==========================================
+            FRENTE DA POLAROID
+========================================== */
+
+.frente{
+
+    background:white;
+
+    padding:14px 14px 55px 14px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    box-shadow:
+
+        0 15px 35px rgba(0,0,0,.35),
+
+        0 5px 15px rgba(0,0,0,.20);
+
+}
+
+.frente img{
+
+    width:100%;
+
+    height:320px;
+
+    object-fit:cover;
+
+    border-radius:4px;
+
+}
+
+.data{
+
+    height:40px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-family:'Great Vibes', cursive;
+
+    font-size:1.9rem;
+
+    color:#444;
+
+}
+
+/* ==========================================
+            VERSO
+========================================== */
+
+.verso{
+
+    background:white;
+
+    color:#444;
+
+    transform:rotateY(180deg);
+
+    padding:35px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    text-align:center;
+
+    box-shadow:
+
+        0 15px 35px rgba(0,0,0,.35);
+
+}
+
+.verso h2{
+
+    font-family:'Great Vibes', cursive;
+
+    font-size:2.4rem;
+
+    color:#ff5f98;
+
+    margin-bottom:20px;
+
+}
+
+.verso p{
+
+    line-height:1.9;
+
+    font-size:1rem;
+
+}
+
+/* ==========================================
+            EFEITOS
+========================================== */
+
+.polaroid{
+
+    transition:.4s;
+
+}
+
+.polaroid:hover{
+
+    filter:brightness(1.05);
+
+}
+
+.frente::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:linear-gradient(
+
+        120deg,
+
+        transparent 40%,
+
+        rgba(255,255,255,.18) 50%,
+
+        transparent 60%
+
+    );
+
+    transform:translateX(-100%);
+
+    transition:.8s;
+
+}
+
+.polaroid:hover .frente::before{
+
+    transform:translateX(100%);
+
+}
+
+/* ==========================================
+            BOTÃO CONTINUAR
+========================================== */
+
+.proxima{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin:70px 0;
+
+}
+
+.proxima a{
+
+    padding:16px 35px;
+
+    border-radius:40px;
+
+    text-decoration:none;
+
+    background:#ff6fa8;
+
+    color:white;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.proxima a:hover{
+
+    background:#ff4e92;
+
+    transform:scale(1.05);
+
+}
+
+/* ==========================================
+        VIRAR A POLAROID
+========================================== */
+
+/* Quando o JavaScript adicionar a classe "virado",
+   o card gira mostrando o verso. */
+
+.card.virado{
+
+    transform:rotateY(180deg);
+
+}
+
+/* ==========================================
+        ANIMAÇÃO DE ENTRADA
+========================================== */
+
+.polaroid{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    animation:aparecer .8s ease forwards;
+
+}
+
+/* Pequeno atraso entre as fotos */
+
+.polaroid:nth-child(1){ animation-delay:.10s; }
+
+.polaroid:nth-child(2){ animation-delay:.20s; }
+
+.polaroid:nth-child(3){ animation-delay:.30s; }
+
+.polaroid:nth-child(4){ animation-delay:.40s; }
+
+.polaroid:nth-child(5){ animation-delay:.50s; }
+
+.polaroid:nth-child(6){ animation-delay:.60s; }
+
+.polaroid:nth-child(7){ animation-delay:.70s; }
+
+.polaroid:nth-child(8){ animation-delay:.80s; }
+
+.polaroid:nth-child(9){ animation-delay:.90s; }
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================
+        RESPONSIVIDADE
+========================================== */
+
+/* Notebook */
+
+@media(max-width:1200px){
+
+    .galeria{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+/* Tablet */
+
+@media(max-width:768px){
+
+    nav{
+
+        flex-direction:column;
+
+        gap:20px;
+
+        padding:20px;
+
+    }
+
+    nav ul{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:15px;
+
+    }
+
+    .hero{
+
+        padding-top:190px;
+
+    }
+
+    .hero h1{
+
+        font-size:3.5rem;
+
+    }
+
+    .hero p{
+
+        font-size:1rem;
+
+    }
+
+    .galeria{
+
+        grid-template-columns:1fr;
+
+        gap:35px;
+
+    }
+
+    .card{
+
+        width:290px;
+
+        height:405px;
+
+    }
+
+}
+
+/* Celulares */
+
+@media(max-width:480px){
+
+    nav h2{
+
+        font-size:32px;
+
+    }
+
+    .hero h1{
+
+        font-size:3rem;
+
+    }
+
+    .hero p{
+
+        width:92%;
+
+        line-height:1.8;
+
+    }
+
+    .card{
+
+        width:260px;
+
+        height:380px;
+
+    }
+
+    .frente img{
+
+        height:280px;
+
+    }
+
+    .data{
+
+        font-size:1.6rem;
+
+    }
+
+    .verso{
+
+        padding:25px;
+
+    }
+
+    .verso h2{
+
+        font-size:2rem;
+
+    }
+
+    .verso p{
+
+        font-size:.95rem;
+
+        line-height:1.7;
+
+    }
+
+    .proxima{
+
+        margin:50px 0;
+
+    }
+
+}
+
+/* ==========================================
+        FIM DO CSS
+========================================== */
+
+/* ==========================================
+        POLAROID ATIVA
+========================================== */
+
+.card.ativa{
+
+    box-shadow:
+
+        0 25px 50px rgba(255, 182, 193, 0.45),
+
+        0 10px 25px rgba(0,0,0,.35);
+
+    transition:.1s;
+
+}

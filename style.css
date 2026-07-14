@@ -1,0 +1,549 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Dancing Script', sans-serif;
+
+    background-image:url("../assets/imagens/fundo.jpeg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    background-attachment:fixed;
+
+    color:#ffffff;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    position:relative;
+}
+
+/* ===========================
+   CAMADA ESCURA
+=========================== */
+
+.overlay{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:rgba(0,0,0,.60);
+
+    z-index:-1;
+}
+
+/* ===========================
+   MENU
+=========================== */
+
+header{
+
+    width:100%;
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    backdrop-filter:blur(15px);
+
+    background:rgba(255,255,255,.08);
+
+    border-bottom:1px solid rgba(255,255,255,.10);
+
+    z-index:999;
+}
+
+nav{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 30px;
+}
+
+nav h2{
+
+    font-family:'Great Vibes', cursive;
+
+    font-size:40px;
+
+    color:#ff8fb8;
+}
+
+nav ul{
+
+    display:flex;
+
+    gap:25px;
+
+    list-style:none;
+}
+
+nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:500;
+
+    transition:.4s;
+}
+
+nav a:hover{
+
+    color:#ff9fc7;
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:120px 20px 60px;
+}
+
+.hero h1{
+
+    font-family:'Great Vibes', cursive;
+
+    font-size:5rem;
+
+    color:#ffd6e7;
+
+    margin-bottom:25px;
+
+    text-shadow:
+        0 0 15px rgba(255,182,193,.8),
+        0 0 35px rgba(255,105,180,.4);
+
+    animation: aparecer 1.5s ease;
+}
+
+.hero p{
+
+    max-width:750px;
+
+    font-size:1.2rem;
+
+    line-height:2;
+
+    margin-bottom:45px;
+
+    color:#f5f5f5;
+
+    animation: aparecer 2s ease;
+}
+
+/* ===========================
+   BOTÃO
+=========================== */
+
+.botao{
+
+    background:linear-gradient(135deg,#ff5f9e,#ff8fb8);
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:18px 45px;
+
+    border-radius:50px;
+
+    font-size:1.1rem;
+
+    font-weight:600;
+
+    transition:.4s;
+
+    box-shadow:0 10px 30px rgba(255,105,180,.35);
+
+    animation: aparecer 2.3s ease;
+}
+
+.botao:hover{
+
+    transform:translateY(-5px) scale(1.05);
+
+    box-shadow:0 15px 35px rgba(255,105,180,.6);
+}
+
+/* ===========================
+   RODAPÉ
+=========================== */
+
+footer{
+
+    text-align:center;
+
+    padding:35px;
+
+    background:rgba(0,0,0,.35);
+
+    backdrop-filter:blur(10px);
+}
+
+footer p{
+
+    color:#ffd6e7;
+
+    font-size:1rem;
+}
+
+/* ===========================
+   ANIMAÇÕES
+=========================== */
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* ==========================================
+   ANIMAÇÃO SUAVE DO TÍTULO
+========================================== */
+
+.hero h1{
+
+    animation:
+    aparecer 1.5s ease,
+    flutuar 4s ease-in-out infinite;
+
+}
+
+@keyframes flutuar{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+/* ==========================================
+   ANIMAÇÃO DO PARÁGRAFO
+========================================== */
+
+.hero p{
+
+    animation:
+    aparecer 2s ease,
+    pulsarTexto 5s infinite;
+
+}
+
+@keyframes pulsarTexto{
+
+    0%{
+
+        opacity:.9;
+
+    }
+
+    50%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:.9;
+
+    }
+
+}
+
+/* ==========================================
+   ANIMAÇÃO DO MENU
+========================================== */
+
+nav a{
+
+    position:relative;
+
+}
+
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-6px;
+
+    width:0;
+
+    height:2px;
+
+    background:#ff9fc7;
+
+    transition:.4s;
+
+}
+
+nav a:hover::after{
+
+    width:100%;
+
+}
+
+/* ==========================================
+   SCROLLBAR PERSONALIZADA
+========================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#111;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#ff7aa8;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#ff4d88;
+
+}
+
+/* ==========================================
+   RESPONSIVIDADE
+========================================== */
+
+@media(max-width:1000px){
+
+    nav{
+
+        flex-direction:column;
+
+        gap:20px;
+
+    }
+
+    nav ul{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .hero{
+
+        padding:140px 20px 50px;
+
+    }
+
+    .hero h1{
+
+        font-size:3rem;
+
+    }
+
+    .hero p{
+
+        font-size:1rem;
+
+        line-height:1.8;
+
+    }
+
+    .botao{
+
+        width:90%;
+
+        max-width:320px;
+
+        text-align:center;
+
+        padding:18px;
+
+    }
+
+    nav h2{
+
+        font-size:32px;
+
+    }
+
+    nav ul{
+
+        gap:15px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .hero h1{
+
+        font-size:2.4rem;
+
+    }
+
+    .hero p{
+
+        font-size:.95rem;
+
+    }
+
+    nav{
+
+        padding:15px;
+
+    }
+
+}
+
+/* ===========================
+   CHUVA DE CORAÇÕES
+=========================== */
+
+#coracoes{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:1;
+
+}
+
+.coracao{
+
+    position:absolute;
+
+    top:-50px;
+
+    font-size:22px;
+
+    animation:cair linear forwards;
+
+    opacity:.9;
+
+}
+
+@keyframes cair{
+
+    0%{
+
+        transform:translateY(0) rotate(0deg);
+
+        opacity:0;
+
+    }
+
+    10%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:translateY(110vh) rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}

@@ -1,0 +1,577 @@
+/* ==========================================
+                RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins', sans-serif;
+
+    background-image:url("assets/imagens/fundo.jpeg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    background-attachment:fixed;
+
+    color:white;
+
+    overflow-x:hidden;
+
+}
+
+/* ==========================================
+                OVERLAY
+========================================== */
+
+.overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.72);
+
+    z-index:-1;
+
+}
+
+/* ==========================================
+                HEADER
+========================================== */
+
+header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    backdrop-filter:blur(14px);
+
+    background:rgba(255,255,255,.06);
+
+    border-bottom:1px solid rgba(255,255,255,.12);
+
+    z-index:999;
+
+}
+
+nav{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 30px;
+
+}
+
+nav h2{
+
+    font-family:'Great Vibes', cursive;
+
+    font-size:40px;
+
+    color:#ffb6d2;
+
+}
+
+nav ul{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:30px;
+
+}
+
+nav a{
+
+    text-decoration:none;
+
+    color:white;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+nav a:hover{
+
+    color:#ff9fc7;
+
+}
+
+nav .ativo{
+
+    color:#ff9fc7;
+
+}
+
+/* ==========================================
+                HERO
+========================================== */
+
+.hero{
+
+    text-align:center;
+
+    padding-top:160px;
+
+    padding-bottom:80px;
+
+}
+
+.hero h1{
+
+    font-family:'Great Vibes', cursive;
+
+    font-size:5rem;
+
+    color:#ffd8e7;
+
+    margin-bottom:20px;
+
+}
+
+.hero p{
+
+    width:min(720px,90%);
+
+    margin:auto;
+
+    font-size:1.15rem;
+
+    line-height:2;
+
+    color:#f3f3f3;
+
+}
+
+/* ==========================================
+            CONTADOR
+========================================== */
+
+.contador{
+
+    max-width:1200px;
+
+    margin:40px auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(6,1fr);
+
+    gap:25px;
+
+    padding:20px;
+
+}
+
+/* ==========================================
+            CARDS DO CONTADOR
+========================================== */
+
+.box{
+
+    background:rgba(255,255,255,.10);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    border-radius:22px;
+
+    padding:30px 20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    transition:.35s;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.25);
+
+}
+
+/* Efeito ao passar o mouse */
+
+.box:hover{
+
+    transform:translateY(-8px);
+
+    background:rgba(255,255,255,.15);
+
+    box-shadow:
+        0 20px 40px rgba(255,182,193,.25);
+
+}
+
+/* Número */
+
+.box h2{
+
+    font-size:3.2rem;
+
+    color:#ffffff;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+    transition:.3s;
+
+}
+
+/* Texto */
+
+.box span{
+
+    color:#ffd9e7;
+
+    font-size:1rem;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+    font-weight:600;
+
+}
+
+/* ==========================================
+            MENSAGEM
+========================================== */
+
+.mensagem{
+
+    max-width:850px;
+
+    margin:80px auto 60px;
+
+    text-align:center;
+
+    padding:0 25px;
+
+}
+
+.mensagem p{
+
+    font-size:1.15rem;
+
+    line-height:2;
+
+    color:#f3f3f3;
+
+}
+
+/* ==========================================
+            BOTÃO
+========================================== */
+
+.proxima{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-bottom:80px;
+
+}
+
+.proxima a{
+
+    background:#ff76a9;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:18px 40px;
+
+    border-radius:50px;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    transition:.35s;
+
+    box-shadow:
+        0 10px 25px rgba(255,118,169,.35);
+
+}
+
+.proxima a:hover{
+
+    transform:translateY(-4px);
+
+    background:#ff5f98;
+
+    box-shadow:
+        0 15px 35px rgba(255,118,169,.45);
+
+}
+
+/* ==========================================
+        ANIMAÇÃO DOS CARDS
+========================================== */
+
+.box{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    animation:aparecer .8s ease forwards;
+
+}
+
+.box:nth-child(1){
+
+    animation-delay:.1s;
+
+}
+
+.box:nth-child(2){
+
+    animation-delay:.2s;
+
+}
+
+.box:nth-child(3){
+
+    animation-delay:.3s;
+
+}
+
+.box:nth-child(4){
+
+    animation-delay:.4s;
+
+}
+
+.box:nth-child(5){
+
+    animation-delay:.5s;
+
+}
+
+.box:nth-child(6){
+
+    animation-delay:.6s;
+
+}
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================
+        ANIMAÇÃO DOS NÚMEROS
+========================================== */
+
+@keyframes pulseNumero{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.08);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+.numeroAtualizado{
+
+    animation:pulseNumero .35s ease;
+
+}
+
+/* ==========================================
+        RESPONSIVIDADE
+========================================== */
+
+/* Notebook */
+
+@media(max-width:1100px){
+
+    .contador{
+
+        grid-template-columns:repeat(3,1fr);
+
+    }
+
+}
+
+/* Tablet */
+
+@media(max-width:768px){
+
+    nav{
+
+        flex-direction:column;
+
+        gap:20px;
+
+        padding:20px;
+
+    }
+
+    nav ul{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:15px;
+
+    }
+
+    .hero{
+
+        padding-top:190px;
+
+    }
+
+    .hero h1{
+
+        font-size:3.8rem;
+
+    }
+
+    .hero p{
+
+        font-size:1rem;
+
+    }
+
+    .contador{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:20px;
+
+    }
+
+}
+
+/* Celulares */
+
+@media(max-width:500px){
+
+    .hero h1{
+
+        font-size:3rem;
+
+    }
+
+    .hero p{
+
+        width:90%;
+
+        line-height:1.8;
+
+    }
+
+    .contador{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .box{
+
+        padding:25px;
+
+    }
+
+    .box h2{
+
+        font-size:2.8rem;
+
+    }
+
+    .box span{
+
+        font-size:.9rem;
+
+    }
+
+    .mensagem p{
+
+        font-size:1rem;
+
+        line-height:1.8;
+
+    }
+
+    .proxima a{
+
+        padding:16px 32px;
+
+        font-size:.95rem;
+
+    }
+
+}
+
+/* ==========================================
+        FIM DO CSS
+========================================== */
