@@ -1,0 +1,505 @@
+/* ==========================================
+                RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins', sans-serif;
+
+    background-image:url("assets/imagens/fundo.jpeg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    background-attachment:fixed;
+
+    color:white;
+
+    overflow-x:hidden;
+
+}
+
+/* ==========================================
+                OVERLAY
+========================================== */
+
+.overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.72);
+
+    z-index:-1;
+
+}
+
+/* ==========================================
+                HEADER
+========================================== */
+
+header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    backdrop-filter:blur(14px);
+
+    background:rgba(255,255,255,.06);
+
+    border-bottom:1px solid rgba(255,255,255,.12);
+
+    z-index:999;
+
+}
+
+nav{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 30px;
+
+}
+
+nav h2{
+
+    font-family:'Great Vibes', cursive;
+
+    font-size:40px;
+
+    color:#ffb6d2;
+
+}
+
+nav ul{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:30px;
+
+}
+
+nav a{
+
+    text-decoration:none;
+
+    color:white;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+nav a:hover,
+nav .ativo{
+
+    color:#ff9fc7;
+
+}
+
+/* ==========================================
+                HERO
+========================================== */
+
+.hero{
+
+    text-align:center;
+
+    padding-top:160px;
+
+    padding-bottom:50px;
+
+}
+
+.hero h1{
+
+    font-family:'Great Vibes', cursive;
+
+    font-size:5rem;
+
+    color:#ffd8e7;
+
+    margin-bottom:20px;
+
+}
+
+.hero p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    line-height:2;
+
+    color:#f5f5f5;
+
+    font-size:1.1rem;
+
+}
+
+/* ==========================================
+            PLAYER
+========================================== */
+
+.player{
+
+    width:min(450px,90%);
+
+    margin:40px auto;
+
+    background:rgba(255,255,255,.10);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    border-radius:30px;
+
+    padding:35px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    box-shadow:
+
+        0 20px 45px rgba(0,0,0,.35);
+
+}
+
+/* ==========================================
+            CAPA
+========================================== */
+
+.capa{
+
+    width:280px;
+
+    height:280px;
+
+    margin-bottom:30px;
+
+}
+
+.capa img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:25px;
+
+    box-shadow:
+
+        0 15px 35px rgba(255,182,193,.35);
+
+    transition:.4s;
+
+}
+
+.capa img:hover{
+
+    transform:scale(1.03);
+
+}
+
+/* ==========================================
+            INFORMAÇÕES
+========================================== */
+
+.informacoes{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+.informacoes h2{
+
+    font-size:2rem;
+
+    color:white;
+
+    margin-bottom:8px;
+
+}
+
+.informacoes p{
+
+    color:#ffd6e7;
+
+    font-size:1rem;
+
+}
+
+/* ==========================================
+            BARRA
+========================================== */
+
+.barra{
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:30px;
+
+}
+
+.barra span{
+
+    width:45px;
+
+    text-align:center;
+
+    font-size:.9rem;
+
+}
+
+#progresso{
+
+    flex:1;
+
+    cursor:pointer;
+
+}
+
+/* ==========================================
+            BOTÃO PLAY
+========================================== */
+
+#play{
+
+    width:75px;
+
+    height:75px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#ff76a9;
+
+    color:white;
+
+    font-size:2rem;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:
+
+        0 10px 25px rgba(255,118,169,.40);
+
+}
+
+#play:hover{
+
+    transform:scale(1.08);
+
+    background:#ff5f98;
+
+}
+
+/* ==========================================
+            BOTÃO PRÓXIMO
+========================================== */
+
+.proxima{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin:70px 0;
+
+}
+
+.proxima a{
+
+    text-decoration:none;
+
+    background:#ff76a9;
+
+    color:white;
+
+    padding:18px 40px;
+
+    border-radius:50px;
+
+    transition:.3s;
+
+    font-weight:600;
+
+}
+
+.proxima a:hover{
+
+    background:#ff5f98;
+
+    transform:translateY(-4px);
+
+}
+
+/* ==========================================
+            RESPONSIVO
+========================================== */
+
+@media(max-width:768px){
+
+    nav{
+
+        flex-direction:column;
+
+        gap:20px;
+
+    }
+
+    nav ul{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:15px;
+
+    }
+
+    .hero{
+
+        padding-top:190px;
+
+    }
+
+    .hero h1{
+
+        font-size:3.8rem;
+
+    }
+
+    .capa{
+
+        width:230px;
+
+        height:230px;
+
+    }
+
+}
+
+@media(max-width:500px){
+
+    .hero h1{
+
+        font-size:3rem;
+
+    }
+
+    .player{
+
+        padding:25px;
+
+    }
+
+    .capa{
+
+        width:200px;
+
+        height:200px;
+
+    }
+
+    .informacoes h2{
+
+        font-size:1.6rem;
+
+    }
+
+}
+
+/* ==========================================
+        ANIMAÇÃO DA CAPA
+========================================== */
+
+.capa.tocando{
+
+    animation: girarDisco 10s linear infinite;
+
+    box-shadow:
+        0 0 20px rgba(255,105,180,.6),
+        0 0 40px rgba(255,105,180,.5),
+        0 0 70px rgba(255,105,180,.4);
+
+}
+
+@keyframes girarDisco{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* ==========================================
+        BOTÃO PLAY
+========================================== */
+
+#play{
+
+    transition:.3s;
+
+}
+
+#play:active{
+
+    transform:scale(.90);
+
+}

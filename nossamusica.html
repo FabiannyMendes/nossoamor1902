@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nossa Música ❤️</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&family=Parisienne&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="nossamusica.css">
+
+</head>
+
+<body>
+
+<div class="overlay"></div>
+
+<header>
+
+<nav>
+
+<h2>Fabianny ❤️ Pedro</h2>
+
+<ul>
+
+<li><a href="index.html">Início</a></li>
+
+<li><a href="nossasmemorias.html">Nossas Memórias</a></li>
+
+<li><a href="tempojuntos.html">Tempo Juntos</a></li>
+
+<li><a href="nossamusica.html" class="ativo">Nossa Música</a></li>
+
+<li><a href="carta.html">Carta</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h1>Nossa Música ❤️</h1>
+
+<p>
+
+Algumas músicas passam a fazer parte da nossa história.
+Esta sempre vai me lembrar de você.
+
+</p>
+
+</section>
+
+<section class="player">
+
+    <div class="capa" id="capa">
+
+        <img src="assets/imagens/capa-musica.jpg" alt="Capa da música">
+
+    </div>
+
+    <div class="informacoes">
+
+        <h2 id="tituloMusica">Perfect</h2>
+
+        <p id="artistaMusica">Ed Sheeran</p>
+
+    </div>
+
+    <audio id="audio">
+
+        <source src="assets/musicas/nossa-musica.mp3" type="audio/mpeg">
+
+        Seu navegador não suporta áudio.
+
+    </audio>
+
+    <div class="barra">
+
+        <span id="tempoAtual">0:00</span>
+
+        <input
+            type="range"
+            id="progresso"
+            value="0"
+            min="0"
+            max="100"
+        >
+
+        <span id="tempoTotal">0:00</span>
+
+    </div>
+
+    <button id="play">
+
+        ▶
+
+    </button>
+
+</section>
+
+<section class="proxima">
+
+<a href="carta.html">
+
+Ler a Carta →
+
+</a>
+
+</section>
+
+<script src="nossamusica.js"></script>
+
+</body>
+
+</html>

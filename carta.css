@@ -1,0 +1,521 @@
+/* ==========================================
+                RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background-image:url("assets/imagens/fundo.jpeg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    background-attachment:fixed;
+
+    color:white;
+
+    overflow-x:hidden;
+
+}
+
+.overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.72);
+
+    z-index:-1;
+
+}
+
+/* ==========================================
+                HEADER
+========================================== */
+
+header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    backdrop-filter:blur(15px);
+
+    background:rgba(255,255,255,.06);
+
+    border-bottom:1px solid rgba(255,255,255,.12);
+
+    z-index:999;
+
+}
+
+nav{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 30px;
+
+}
+
+nav h2{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:40px;
+
+    color:#ffb6d2;
+
+}
+
+nav ul{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:30px;
+
+}
+
+nav a{
+
+    text-decoration:none;
+
+    color:white;
+
+    transition:.3s;
+
+}
+
+nav a:hover,
+nav .ativo{
+
+    color:#ff9fc7;
+
+}
+
+/* ==========================================
+                HERO
+========================================== */
+
+.hero{
+
+    text-align:center;
+
+    padding-top:160px;
+
+    padding-bottom:50px;
+
+}
+
+.hero h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:5rem;
+
+    color:#ffd8e7;
+
+    margin-bottom:20px;
+
+}
+
+.hero p{
+
+    width:min(700px,90%);
+
+    margin:auto;
+
+    line-height:2;
+
+    font-size:1.1rem;
+
+}
+
+/* ==========================================
+            ENVELOPE
+========================================== */
+
+.envelope-area{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-top:30px;
+
+}
+
+.envelope{
+
+    position:relative;
+
+    width:340px;
+
+    height:220px;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+}
+
+.envelope:hover{
+
+    transform:translateY(-10px) scale(1.03);
+
+}
+
+/* Corpo */
+
+.corpo{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    background:#ffdbe7;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+}
+
+/* Aba superior */
+
+.tampa{
+
+    position:absolute;
+
+    top:0;
+
+    width:100%;
+
+    height:110px;
+
+    background:#ffc6da;
+
+    clip-path:polygon(0 0,100% 0,50% 100%);
+
+    transform-origin:top;
+
+    z-index:5;
+
+}
+
+/* Laterais */
+
+.corpo::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:#ffbfd6;
+
+    clip-path:polygon(0 0,50% 55%,0 100%);
+
+}
+
+.corpo::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:#ffbfd6;
+
+    clip-path:polygon(100% 0,50% 55%,100% 100%);
+
+}
+
+/* Coração */
+
+.coracao{
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    font-size:38px;
+
+    z-index:20;
+
+    animation:pulsar 2s infinite;
+
+}
+
+@keyframes pulsar{
+
+    0%{
+
+        transform:translate(-50%,-50%) scale(1);
+
+    }
+
+    50%{
+
+        transform:translate(-50%,-50%) scale(1.15);
+
+    }
+
+    100%{
+
+        transform:translate(-50%,-50%) scale(1);
+
+    }
+
+}
+
+/* Texto */
+
+.clicar{
+
+    margin-top:30px;
+
+    font-size:1.1rem;
+
+    color:#ffd8e7;
+
+    animation:piscando 2s infinite;
+
+}
+
+@keyframes piscando{
+
+    50%{
+
+        opacity:.4;
+
+    }
+
+}
+
+/* ==========================================
+            CARTA
+========================================== */
+
+.carta{
+
+    width:min(800px,90%);
+
+    margin:80px auto;
+
+    background:white;
+
+    color:#444;
+
+    padding:50px;
+
+    border-radius:20px;
+
+    display:none;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+
+}
+
+.carta h2{
+
+    text-align:center;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:3rem;
+
+    color:#ff76a9;
+
+    margin-bottom:35px;
+
+}
+
+.carta h3{
+
+    margin-top:40px;
+
+    text-align:right;
+
+    font-family:'Great Vibes',cursive;
+
+    color:#ff76a9;
+
+    font-size:2.5rem;
+
+}
+
+.carta p{
+
+    line-height:2;
+
+    font-size:1.1rem;
+
+}
+
+/* ==========================================
+            RESPONSIVO
+========================================== */
+
+@media(max-width:768px){
+
+    nav{
+
+        flex-direction:column;
+
+        gap:20px;
+
+    }
+
+    nav ul{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+    }
+
+    .hero{
+
+        padding-top:190px;
+
+    }
+
+    .hero h1{
+
+        font-size:3.8rem;
+
+    }
+
+}
+
+@media(max-width:500px){
+
+    .hero h1{
+
+        font-size:3rem;
+
+    }
+
+    .envelope{
+
+        width:280px;
+
+        height:185px;
+
+    }
+
+    .carta{
+
+        padding:30px;
+
+    }
+
+    .carta h2{
+
+        font-size:2.2rem;
+
+    }
+
+    .carta h3{
+
+        font-size:2rem;
+
+    }
+
+}
+
+/* ==========================================
+        ANIMAÇÕES
+========================================== */
+
+.envelope.aberto .tampa{
+
+    transform:rotateX(180deg);
+
+    transition:.8s;
+
+}
+
+.envelope.aberto{
+
+    transform:translateY(-30px);
+
+}
+
+/* Carta visível */
+
+.carta.mostrar{
+
+    display:block;
+
+    animation:aparecerCarta 1.2s ease;
+
+}
+
+@keyframes aparecerCarta{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(80px) scale(.8);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0) scale(1);
+
+    }
+
+}
